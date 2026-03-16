@@ -11,6 +11,6 @@ class JordiServiceTest {
 
         JordiService result = new JordiService();
 
-        assertEquals("test getInfoAAAAA", result.getInfo());
+        assertEquals("test getInfo", result.getInfo());
     }
 }
