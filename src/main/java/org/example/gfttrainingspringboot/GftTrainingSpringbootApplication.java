@@ -15,6 +15,6 @@ public class GftTrainingSpringbootApplication {
 
     @GetMapping("/")
     public String home() {
-        return "hola soy albert";
+        return "hola soy albertt";
     }
 }
