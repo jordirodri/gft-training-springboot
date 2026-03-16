@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# Bloquea el push si no se cumple el umbral de cobertura definido en pom.xml.
+./mvnw -q verify
+status=$?
+
+if [ $status -ne 0 ]; then
+  echo ""
+  echo "Push bloqueado: han fallado tests o cobertura (jacoco:check)."
+  echo "Puedes ajustar el umbral con -Dcoverage.minimum=1.00 para exigir 100%."
+  exit $status
+fi
+
+exit 0
+
