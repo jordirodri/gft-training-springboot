@@ -7,7 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GftTrainingSpringbootApplication {
 
     public static void main(String[] args) {
+
+        System.out.println("Estoy probando a ver si funciona");
+
         SpringApplication.run(GftTrainingSpringbootApplication.class, args);
     }
+
+
 
 }
