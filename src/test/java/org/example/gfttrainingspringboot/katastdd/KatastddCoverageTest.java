@@ -10,24 +10,24 @@ import org.junit.jupiter.api.Test;
 class KatastddCoverageTest {
 
     @Test
-    void shouldInstantiateAllKatastddExampleClasses() throws Exception {
+    void shouldInstantiateAllKatastddMainClasses() throws Exception {
         List<String> classNames = List.of(
-                "org.example.gfttrainingspringboot.katastdd.albert.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.alejandro.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.esmeralda.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.felipe.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.fran.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.ivan.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.jaime.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.javi.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.jorge.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.joseph.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.mario.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.mykei.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.pau.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.pauln.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.pautigre.funcionejemplo",
-                "org.example.gfttrainingspringboot.katastdd.xavi.funcionejemplo");
+                "org.example.gfttrainingspringboot.katastdd.albert.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.alejandro.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.esmeralda.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.felipe.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.fran.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.ivan.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.jaime.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.javi.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.jorge.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.joseph.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.mario.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.mykei.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.pau.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.pautigre.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.xavi.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.pauln.StringCalculator");
 
         for (String className : classNames) {
             Class<?> clazz = Class.forName(className);
@@ -37,4 +37,3 @@ class KatastddCoverageTest {
         }
     }
 }
-
