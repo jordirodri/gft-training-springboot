@@ -5,23 +5,8 @@ import java.util.List;
 
 public class StringCalculator {
 
-    public static int add(String input) {
-        if (input.isEmpty())
-            return 0;
-
-        // Estos delimitadores son como si fueran por defecto
-        String delimiter = "[,\n]";
-        String numbers = input;
-
-        if (input.startsWith("//")) {
-            int delimiterEndIndex = input.indexOf("\n");
-            delimiter = input.substring(2, delimiterEndIndex);
-            numbers = input.substring(delimiterEndIndex + 1);
-        }
-
-        String[] parts = numbers.split(delimiter);
+    public static int makeSum(String[] parts) {
         int sum = 0;
-
         List<Integer> negatives = new ArrayList<>();
 
         for (String part : parts) {
@@ -43,6 +28,26 @@ public class StringCalculator {
                     "Negativos no permitidos: " + negatives
             );
         }
+
+        return sum;
+    }
+
+    public static int add(String input) {
+        if (input.isEmpty())
+            return 0;
+
+        // Estos delimitadores son como si fueran por defecto
+        String delimiter = "[,\n]";
+        String numbers = input;
+
+        if (input.startsWith("//")) {
+            int delimiterEndIndex = input.indexOf("\n");
+            delimiter = input.substring(2, delimiterEndIndex);
+            numbers = input.substring(delimiterEndIndex + 1);
+        }
+
+        String[] parts = numbers.split(delimiter);
+        int sum = makeSum(parts);
 
         return sum;
     }
