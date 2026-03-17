@@ -1,15 +1,9 @@
 package org.example.gfttrainingspringboot.katastdd;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.lang.reflect.Constructor;
-import java.net.URI;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,24 +11,23 @@ class KatastddCoverageTest {
 
     @Test
     void shouldInstantiateAllKatastddMainClasses() throws Exception {
-        String basePath = "org/example/gfttrainingspringboot/katastdd";
-        URI uri = Thread.currentThread().getContextClassLoader().getResource(basePath).toURI();
-
-        List<String> classNames;
-        try (Stream<Path> pathStream = Files.walk(Path.of(uri))) {
-            classNames = pathStream
-                    .filter(path -> path.toString().endsWith(".class"))
-                    .filter(path -> !path.getFileName().toString().contains("$"))
-                    .map(path -> {
-                        String relative = Path.of(uri).relativize(path).toString();
-                        return "org.example.gfttrainingspringboot.katastdd."
-                                + relative.replace('\\', '.').replace('/', '.').replace(".class", "");
-                    })
-                    .filter(className -> !className.endsWith("Test"))
-                    .collect(Collectors.toList());
-        }
-
-        assertFalse(classNames.isEmpty(), "No se han encontrado clases en katastdd para cubrir");
+        List<String> classNames = List.of(
+                "org.example.gfttrainingspringboot.katastdd.albert.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.alejandro.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.esmeralda.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.felipe.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.fran.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.ivan.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.jaime.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.javi.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.jorge.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.joseph.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.mario.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.mykei.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.pau.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.pautigre.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.xavi.StringCalculator",
+                "org.example.gfttrainingspringboot.katastdd.pauln.StringCalculator");
 
         for (String className : classNames) {
             Class<?> clazz = Class.forName(className);

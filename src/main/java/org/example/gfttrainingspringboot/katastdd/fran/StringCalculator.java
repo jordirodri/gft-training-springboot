@@ -1,4 +1,4 @@
 package org.example.gfttrainingspringboot.katastdd.fran;
 
-public class funcionejemplo {
+public class StringCalculator {
 }
